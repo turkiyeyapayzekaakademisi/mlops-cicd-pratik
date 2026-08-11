@@ -53,6 +53,7 @@ def test_model_artifact_is_created(tmp_path):
     test_model_path = tmp_path / "iris_model.joblib"
 
     result = train_and_save_model(test_model_path)
+    print(result)
 
     assert test_model_path.exists()
 
