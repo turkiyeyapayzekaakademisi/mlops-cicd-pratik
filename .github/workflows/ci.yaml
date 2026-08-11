@@ -57,8 +57,7 @@ jobs:
       - name: Docker image oluştur
         run: | 
           docker build \ 
-          -t ${{ env.IMAGE_NAME}}:${{ github.sha }} \
-          .
+          -t ${{ env.IMAGE_NAME}}:${{ github.sha }} .
         
       # ghcr authentication adım
       - name: GHCR giriş
