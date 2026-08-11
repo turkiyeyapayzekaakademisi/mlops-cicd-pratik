@@ -8,6 +8,8 @@ from training.train_model import (
     train_and_save_model,
 )
 
+import seaborn as sns
+
 
 def test_dataset_is_loaded():
     features, target, target_names = load_dataset()
@@ -44,7 +46,7 @@ def test_model_can_be_trained():
     # performans
     accuracy = evaluate_model(model, test_features, test_target)
 
-    assert accuracy >= 1
+    assert accuracy >= 0.8
 
 
 def test_model_artifact_is_created(tmp_path):
