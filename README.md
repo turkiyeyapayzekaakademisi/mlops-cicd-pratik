@@ -117,3 +117,17 @@ Github Actions Dosyasının Hazırlanması
     4. ci.yaml'ın içeriğini hazırlanması
     5. workflow dosyasının git e eklenmesi
     
+Pipeline Secret Değişkenlerinin Tanımlanması
+    1. Secret neden kullanılır? api key, access token, registry password bunların saklı olması lazım
+    2. GITHUB_TOKEN kullanılması    
+        ${{ secrets.GITHUB_TOKEN }}
+    3. pipeline a package yazma yetkisi verilmesi
+    4. registry bilgilerinin tanımlanası
+    5. Docker image yapısının güncellenmesi
+    6. GHCR authentication adımının eklenmesi
+    7. latest tag inin oluşturulması
+    8. image ı ghcr ye gönder
+    
+
+
+
