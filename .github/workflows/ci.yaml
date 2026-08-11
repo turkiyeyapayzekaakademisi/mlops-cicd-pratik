@@ -14,7 +14,7 @@ on:
     branches:
       - main
 
-persmissions:
+permissions:
   contents: read
   packages: write
 
