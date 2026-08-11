@@ -64,13 +64,13 @@ jobs:
       - name: GHCR giriş
         if: github.event_name == 'push'
         run: |
-        echo "${{ secrets.GITHUB_TOKEN }}" | docker login ${{ env.REGISTRY}} \
-          -u "${{ github.actor }}" \
-          --password-stdin 
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ${{ env.REGISTRY}} \
+            -u "${{ github.actor }}" \
+            --password-stdin 
 
       # latest tagi
       - name: Latest tag oluştur
-        if github.event_name == 'push'
+        if: github.event_name == 'push'
         run: |
           docker tag \
             ${{ env.IMAGE_NAME }}:${{ github.sha }} \
