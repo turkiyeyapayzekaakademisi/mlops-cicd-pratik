@@ -1,6 +1,6 @@
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME = ghcr.io/${{ github.repository_owner }}/mlops-cicd-api
+  IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/mlops-cicd-api
 
 name: CI Pipeline
 
@@ -65,8 +65,8 @@ jobs:
         if: github.event_name == 'push'
         run: |
         echo "${{ secrets.GITHUB_TOKEN }}" | docker login ${{ env.REGISTRY}} \
-        -u "${{ github.actor }}" \
-        --password-stdin 
+          -u "${{ github.actor }}" \
+          --password-stdin 
 
       # latest tagi
       - name: Latest tag oluştur
