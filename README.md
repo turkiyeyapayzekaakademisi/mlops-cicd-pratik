@@ -127,7 +127,8 @@ Pipeline Secret Değişkenlerinin Tanımlanması
     6. GHCR authentication adımının eklenmesi
     7. latest tag inin oluşturulması
     8. image ı ghcr ye gönder
-    
 
+Başarılı ve Başarısız Pipeline Sonuçlarının İncelenmesi
+    1. 
 
 

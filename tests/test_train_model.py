@@ -44,7 +44,7 @@ def test_model_can_be_trained():
     # performans
     accuracy = evaluate_model(model, test_features, test_target)
 
-    assert accuracy >= 0.8
+    assert accuracy >= 1
 
 
 def test_model_artifact_is_created(tmp_path):
