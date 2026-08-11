@@ -1,0 +1,16 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.env
+.ruff_cache/
+artifacts/*.joblib
+tests/
+artifacts/
+.vscode/
+README.md
+requirements-dev.txt
+.git/
+.github/

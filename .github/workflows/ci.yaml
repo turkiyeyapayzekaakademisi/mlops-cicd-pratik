@@ -1,0 +1,53 @@
+name: CI Pipeline
+
+# pipeline ın ne zaman çalışacağını belirle
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # ci kontrollerini çalıştır
+  ci:
+    run-on: ubuntu-latest
+
+    steps:
+      # repo kodlarını runner'a indir
+      - name: Repository kodunu al
+        uses: actions/checkout@v4
+
+      # python ortamını hazırla
+      - name: Python 3.12 kurulumu
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      # proje ve test bağımlılıklarının kurulması
+      - name: Python bağımlılıklarını kurulması
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      # kod kalitesini kontrol et
+      - name: Ruff lint kontrolü
+        run: ruff check .
+
+      # kod formatını kontrol et
+      - name: Ruff format kontrolü
+        run: ruff format --check .
+
+      # otomatik testleri çalıştır
+      - name: Pytest testlerini çalıştır
+        run: python -m pytest
+       
+      # docker image oluşturma
+      - name: Docker image oluştur
+        run: docker build -t mlops-cicd-api:${{ github.sha}} .
+
+
+        
